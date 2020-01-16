@@ -1,12 +1,23 @@
 <nav>
-    <ul>
-        <li><%= link_to "Home", root_path %></li>
-        <% if !user_signed_in? %>
-            <li><%= link_to "Signup", new_user_registration_path %></li>
-            <li><%= link_to "Login", new_user_session_path %></li>
-        <% else %>
-            <li><%= current_user.email %></li>
-            <li><%= link_to "Logout", destroy_user_session_path, method:"delete" %></li>
-        <% end %>
-    </ul>
+    <div class="nav-wrapper  green darken-1">
+        <div class="container">
+            <a><%= link_to "Job Application Tracker", root_path, :class => "brand-logo" %></a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <% if !user_signed_in? %>
+                    <li><a><%= link_to "Login", new_user_session_path %></a></li>
+                    <li><a><%= link_to "Signup", new_user_registration_path, :class => "blue darken-1" %></a></li>
+                <% else %>
+                    <li><%= current_user.email %></li>
+                    <li><a><%= link_to "Logout", destroy_user_session_path, method:"delete" %></a></li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
 </nav>
+
+<ul class="sidenav" id="mobile-demo">
+    <li><a><li><%= link_to "Signup", new_user_registration_path %></li></a></li>
+    <li><a><%= link_to "Login", new_user_session_path %></a></li>
+    <li><a><%= link_to "Logout", destroy_user_session_path, method:"delete" %></a></li>
+</ul>
