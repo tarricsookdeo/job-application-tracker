@@ -1,1 +1,16 @@
-<h1>Sample Home Page</h1>
+<div class="container">
+    <div class="row" style="margin-top: 15vh">
+        <div class="col l6 s12">
+            <%= image_tag("tracker.svg", :alt => "progress tracker", height: 300) %>
+        </div>
+
+        <div class="col l6 s12">
+            <h5>Welcome to Job Application Tracker! This job application tracker will allow
+                you to keep track of companies you would like to work for, and where you are
+                in the proccess of applying. Create an account, or sign in with GitHub to get
+                started.</h5>
+            
+            <a><%= link_to "Signup", new_user_registration_path, :class => "btn blue darken-1" %>
+        </div>
+    </div>
+</div>
