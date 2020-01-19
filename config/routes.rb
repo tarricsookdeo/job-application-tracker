@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'application#welcome'
-  resources :job_applications, only: [:new, :create, :index, :update, :destroy]
-  
+  resources :job_applications, only: [:new, :create, :index, :update, :destroy, :show]
+
   devise_for :users, :controllers => {registrations: 'registrations', omniauth_callbacks: 'callbacks'}
 
   devise_scope :user do
