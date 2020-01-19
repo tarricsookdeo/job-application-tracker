@@ -1,0 +1,23 @@
+<div class="container">
+    <h3 class="center-align">Your Job Applications</h3>
+
+    <table class="striped responsive-table centered">
+        <thead>
+          <tr>
+              <th>Company</th>
+              <th>Status</th>
+              <th>Details / Edit</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        <% @applications.each do |application| %>
+          <tr>
+            <td><%= application.company.name %></td>
+            <td><%= application.status %></td>
+            <td><%= link_to "Details / Edit", job_application_path(application) %></td>
+          </tr>
+        <% end %>
+        </tbody>
+    </table>
+</div>
