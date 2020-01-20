@@ -25,12 +25,33 @@ class JobApplicationsController < ApplicationController
         end
     end
 
+    def edit
+        @application = JobApplication.find_by(id: params[:id])
+    end
+
+    def update
+        @application = JobApplication.find_by(id: params[:id])
+
+        if @application.update(job_application_params)
+            redirect_to @application
+          else
+            flash.now[:error] = @application.errors.full_messages
+            render 'edit'
+          end
+    end
+
+    def destroy
+        @application = JobApplication.find_by(id: params[:id])
+
+        if @application.delete
+            redirect_to job_applications_path
+        end
+    end
+
     private
 
     def job_application_params
         params.require(:job_application).permit(
-            :user_id,
-            :company_id,
             :status,
             company_attributes: [
                 :name

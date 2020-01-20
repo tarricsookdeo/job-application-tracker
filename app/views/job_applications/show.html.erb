@@ -2,4 +2,8 @@
     <h4><%= @application.company.name %> Application</h4>
     <h5>Last Updated: <%= @application.updated_at %></h5>
     <h5><h5>Status: <%= @application.status %></h5></h5>
+
+    <%= link_to "Edit Application", edit_job_application_path(@application), class: "btn blue darken-1" %>
+    <%= link_to "Delete Application", job_application_path, method: :delete, class: "btn red darken-1" %>
+    <%= link_to "All Applications", job_applications_path %>
 </div>

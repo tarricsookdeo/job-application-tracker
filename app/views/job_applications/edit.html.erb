@@ -1,0 +1,19 @@
+<div class="container">
+    <%= form_for @application do |f| %>
+        <%= f.label :status %>
+        <%= f.text_area :status %>
+        <h1>Company</h1>
+        <%= f.fields_for :company do |company_form| %>
+            <%= company_form.label :name %>
+            <%= company_form.text_area :name %>
+        <% end %>
+
+        <%= f.submit "Edit Job Application" %>
+    <% end %>
+
+    <% if flash[:error] %>
+        <% flash[:error].each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    <% end %>
+</div>
