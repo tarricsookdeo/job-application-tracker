@@ -1,19 +1,32 @@
-<div class="container">
-    <%= form_for @application do |f| %>
-        <%= f.label :status %>
-        <%= f.text_area :status %>
-        <h1>Company</h1>
-        <%= f.fields_for :company do |company_form| %>
-            <%= company_form.label :name %>
-            <%= company_form.text_area :name %>
-        <% end %>
-
-        <%= f.submit "Edit Job Application" %>
-    <% end %>
-
+<%= form_for @application do |f| %>
+<div class="container center-align">
     <% if flash[:error] %>
         <% flash[:error].each do |msg| %>
             <li><%= msg %></li>
         <% end %>
     <% end %>
+    <div class="row valign-wrapper">
+      <div class="col s6 offset-s3 valign">
+        <div class="card">
+          <div class="card-content">
+            <div class="field">
+              <%= f.label :Status %><br />
+              <%= f.text_field :status, autofocus: true, autocomplete: "email" %>
+            </div>
+
+            <div class="field">
+            <%= f.fields_for :company do |company_form| %>
+                <%= company_form.label :'Company Name' %>
+                <%= company_form.text_field :name %>
+            <% end %>
+            </div>
+          </div>
+
+          <div class="card-action">
+            <%= f.submit "Submit", :class => "btn blue darken-1" %> <br>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
+<% end %>
