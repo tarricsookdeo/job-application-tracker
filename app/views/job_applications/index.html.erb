@@ -6,6 +6,7 @@
           <tr>
               <th>Company</th>
               <th>Status</th>
+              <th>Position</th>
               <th>Details / Edit</th>
           </tr>
         </thead>
@@ -15,6 +16,7 @@
           <tr>
             <td><%= application.company.name %></td>
             <td><%= application.status %></td>
+            <td><%= application.position %></td>
             <td><%= link_to "Details / Edit", job_application_path(application) %></td>
           </tr>
         <% end %>

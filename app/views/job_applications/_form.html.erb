@@ -5,6 +5,7 @@
             <li><%= msg %></li>
         <% end %>
     <% end %>
+    
     <div class="row valign-wrapper">
       <div class="col s6 offset-s3 valign">
         <div class="card">
@@ -12,7 +13,7 @@
 
             <div class="field">
                 <select name="job_application[status]">
-                  <option value="" disabled selected>Choose job application status</option>
+                  <option value="" disabled selected>Choose job application status...</option>
                   <option value="Considering Applying">Considering Applying</option>
                   <option value="Researching Company">Researching Company</option>
                   <option value="Preparing to Apply">Preparing to Apply</option>
@@ -21,6 +22,11 @@
                   <option value="Offer">Offer</option>
                   <option value="Rejected">Rejected</option>
                 </select>
+            </div>
+
+            <div class="field">
+                <%= f.label :position, :required => true %>
+                <%= f.text_field :position %>
             </div>
 
             <div class="field">

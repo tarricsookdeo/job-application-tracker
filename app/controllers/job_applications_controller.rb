@@ -52,6 +52,7 @@ class JobApplicationsController < ApplicationController
 
     def job_application_params
         params.require(:job_application).permit(
+            :position,
             :status,
             company_attributes: [
                 :name
