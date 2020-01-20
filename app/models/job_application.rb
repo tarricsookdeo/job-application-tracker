@@ -1,5 +1,5 @@
 class JobApplication < ApplicationRecord
-    validates :status, presence: true
+    validates :status, :position, presence: true
 
     belongs_to :user
     belongs_to :company
