@@ -1,4 +1,6 @@
 class JobApplication < ApplicationRecord
+    validates :status, presence: true
+
     belongs_to :user
     belongs_to :company
 
