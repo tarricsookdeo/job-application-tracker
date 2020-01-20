@@ -11,12 +11,12 @@
           <div class="card-content">
             <div class="field">
               <%= f.label :Status %><br />
-              <%= f.text_field :status, autofocus: true, autocomplete: "email" %>
+              <%= f.text_field :status, autofocus: true, autocomplete: "email", :required => true %>
             </div>
 
             <div class="field">
             <%= f.fields_for :company do |company_form| %>
-                <%= company_form.label :'Company Name' %>
+                <%= company_form.label :'Company Name', :required => true %>
                 <%= company_form.text_field :name %>
             <% end %>
             </div>
