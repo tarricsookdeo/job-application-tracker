@@ -1,11 +1,6 @@
 <%= form_for @application do |f| %>
-<div class="container center-align">
-    <% if flash[:error] %>
-        <% flash[:error].each do |msg| %>
-            <li><%= msg %></li>
-        <% end %>
-    <% end %>
-    
+<%= render  "flash" %>
+<div class="container center-align">    
     <div class="row valign-wrapper">
       <div class="col s6 offset-s3 valign">
         <div class="card">
