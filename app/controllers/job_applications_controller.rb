@@ -19,7 +19,6 @@ class JobApplicationsController < ApplicationController
     end
 
     def create
-        binding.pry
         @application = current_user.job_applications.build(job_application_params)
 
         if @application.save
