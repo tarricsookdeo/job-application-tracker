@@ -1,4 +1,7 @@
 class JobApplication < ApplicationRecord
+    scope :offers, -> {where(status: "Offer")}
+    scope :rejected, -> {where(status: "Rejected")}
+    
     validates :status, :position, presence: true
 
     belongs_to :user
