@@ -1,11 +1,12 @@
 class JobApplication < ApplicationRecord
-    scope :offers, -> {where(status: "Offer")}
-    scope :rejected, -> {where(status: "Rejected")}
+    scope :by_company, -> (id) {where("company_id == ?", id)}
     
     validates :status, :position, presence: true
 
     belongs_to :user
     belongs_to :company
 
-    accepts_nested_attributes_for :company
+    def company_attributes=(company_hash)
+        self.company = Company.find_or_create_by(company_hash)
+    end
 end
