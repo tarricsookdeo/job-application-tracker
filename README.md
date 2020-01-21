@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Overview
 
-Things you may want to cover:
+This is a simple job application tracker. Users can create, read, update, and delete certian fields
+in a job application.
 
-* Ruby version
+- Ruby version - 2.6.5
 
-* System dependencies
+- Configuration
+  1. Run `bundle install`
+  2. run `rake db:migrate`
+- Database creation
 
-* Configuration
+- Database initialization
 
-* Database creation
+- How to run the test suite
 
-* Database initialization
+- Services (job queues, cache servers, search engines, etc.)
 
-* How to run the test suite
+- Deployment instructions
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- ...
