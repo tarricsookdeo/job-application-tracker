@@ -1,4 +1,5 @@
 class JobApplicationsController < ApplicationController
+    before_action :authenticate_user!
 
     def index
         @applications = JobApplication.where(user_id: current_user.id)

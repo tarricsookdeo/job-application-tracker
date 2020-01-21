@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-    before_action :authenticate_user!
 
     def welcome
         if signed_in?
