@@ -2,11 +2,15 @@ class JobApplicationsController < ApplicationController
     before_action :authenticate_user!
 
     def index
-        @applications = JobApplication.where(user_id: current_user.id)
+        if params['company_id']
+            @applications = current_user.job_applications.by_company(params['company_id'])
+        else
+            @applications = current_user.job_applications
+        end
     end
 
     def show
-        @application = JobApplication.find_by(id: params[:id])
+        @application = current_user.job_applications.find_by(id: params[:id])
     end
 
     def new
@@ -15,8 +19,8 @@ class JobApplicationsController < ApplicationController
     end
 
     def create
-        @application = JobApplication.new(job_application_params)
-        @application.user_id = current_user.id
+        binding.pry
+        @application = current_user.job_applications.build(job_application_params)
 
         if @application.save
             redirect_to job_applications_path
