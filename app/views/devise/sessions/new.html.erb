@@ -4,6 +4,7 @@
       <div class="col s6 offset-s3 valign">
         <div class="card">
           <div class="card-content">
+            <%= render "devise/shared/error_messages", resource: resource %>
             <span class="card-title center-align">Login</span>
               <div class="field">
                 <%= f.label :email %><br />
