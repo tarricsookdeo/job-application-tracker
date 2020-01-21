@@ -14,7 +14,7 @@
         <tbody>
         <% @applications.each do |application| %>
           <tr>
-            <td><%= application.company.name %></td>
+            <td><a href="companies/<%=application.company.id%>/job_applications"><%= application.company.name %></a></td>
             <td><%= application.status %></td>
             <td><%= application.position %></td>
             <td><%= link_to "Details / Edit", job_application_path(application) %></td>
